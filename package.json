@@ -1,0 +1,29 @@
+{
+  "name": "net.opland.fluxer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Stream Deck plugin for Fluxer",
+  "scripts": {
+    "icons": "node scripts/make-icons.mjs",
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "validate": "streamdeck validate net.opland.fluxer.sdPlugin",
+    "link": "streamdeck link net.opland.fluxer.sdPlugin",
+    "pack": "streamdeck pack net.opland.fluxer.sdPlugin --output dist",
+    "previews": "node scripts/make-previews.mjs"
+  },
+  "dependencies": {
+    "@elgato/streamdeck": "^3.0.1",
+    "ws": "^8.18.0",
+    "@elgato/utils": "^0.6.0"
+  },
+  "devDependencies": {
+    "@elgato/cli": "^1.7.0",
+    "@types/node": "^20.0.0",
+    "@types/ws": "^8.5.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "UUID": "net.opland.fluxer",
+  "Name": "Fluxer",
+  "Version": "0.1.0.0",
+  "Author": "Ferdinand99",
+  "Description": "Control Fluxer from your Stream Deck: mute, deafen, push-to-talk, set your status, send quick messages, see who is in a voice channel and track unread mentions. Unofficial plugin.",
+  "Category": "Fluxer",
+  "CategoryIcon": "imgs/category-icon",
+  "Icon": "imgs/plugin-icon",
+  "CodePath": "bin/plugin.js",
+  "SDKVersion": 3,
+  "Nodejs": {
+    "Version": "20"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "7.1"
+  },
+  "Actions": [
+    {
+      "UUID": "net.opland.fluxer.mute",
+      "Name": "Mute",
+      "Icon": "imgs/action-mute",
+      "Tooltip": "Toggle microphone mute in Fluxer (presses your Fluxer shortcut).",
+      "PropertyInspectorPath": "ui/shortcut.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "net.opland.fluxer.deafen",
+      "Name": "Deafen",
+      "Icon": "imgs/action-deafen",
+      "Tooltip": "Toggle deafen in Fluxer (presses your Fluxer shortcut).",
+      "PropertyInspectorPath": "ui/shortcut.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "net.opland.fluxer.ptt",
+      "Name": "Push to Talk",
+      "Icon": "imgs/action-ptt",
+      "Tooltip": "Hold to press your Fluxer push-to-talk shortcut.",
+      "PropertyInspectorPath": "ui/shortcut.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "net.opland.fluxer.status",
+      "Name": "Status",
+      "Icon": "imgs/action-status",
+      "Tooltip": "Set your online status.",
+      "PropertyInspectorPath": "ui/status.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "net.opland.fluxer.message",
+      "Name": "Quick Message",
+      "Icon": "imgs/action-message",
+      "Tooltip": "Send a preset message to a channel or DM.",
+      "PropertyInspectorPath": "ui/message.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "net.opland.fluxer.voice",
+      "Name": "Voice Channel",
+      "Icon": "imgs/action-voice",
+      "Tooltip": "Shows who is in a voice channel. Press to open it.",
+      "PropertyInspectorPath": "ui/voice.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "net.opland.fluxer.mentions",
+      "Name": "Mentions",
+      "Icon": "imgs/action-mentions",
+      "Tooltip": "Shows unread mentions and DMs. Press to open Fluxer.",
+      "PropertyInspectorPath": "ui/account.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    }
+  ]
+}

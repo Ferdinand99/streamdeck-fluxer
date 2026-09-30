@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Fluxer</title>
+	<script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+</head>
+<body>
+	<sdpi-item label="Channel"><sdpi-select setting="channelId" datasource="voiceChannels" loading="Loading channels..." placeholder="Select a channel" hot-reload></sdpi-select></sdpi-item>
+	<sdpi-item label="&nbsp;"></sdpi-item>
+	<sdpi-item label="Instance"><sdpi-textfield global setting="instance" placeholder="https://fluxer.app" ></sdpi-textfield></sdpi-item>
+	<sdpi-item label="Token"><sdpi-password global setting="token" placeholder="flx_..."></sdpi-password></sdpi-item>
+	<sdpi-item><details><summary>Where do I find the token?</summary>
+		<p>A valid token starts with <code>flx_</code> and is 40 characters long. In the Fluxer web app, press F12 &rarr; Network, reload the page, click a request to <code>/api/...</code> and copy the <code>Authorization</code> header value (it should start with <code>flx_</code>). It gives full access to your account: never share it. It is stored only in Stream Deck on this PC.</p>
+	</details></sdpi-item>
+	<sdpi-item><details>
+		<summary>Log in with email instead</summary>
+		<p>Fetches the token for you. Your password is sent to Fluxer only, never saved. Set <b>Instance</b> first if you use a self-hosted server.</p>
+		<div class="fx-row"><input id="fx-email" type="email" placeholder="Email" autocomplete="off" /></div>
+		<div class="fx-row"><input id="fx-pass" type="password" placeholder="Password" autocomplete="off" /></div>
+		<div class="fx-row" id="fx-mfa" hidden><input id="fx-code" type="text" placeholder="2FA code" autocomplete="off" /></div>
+		<div class="fx-row"><button id="fx-go" type="button">Log in</button></div>
+		<p id="fx-msg"></p>
+	</details></sdpi-item>
+	<style>
+		.fx-row { margin: 4px 0; }
+		.fx-row input { width: 100%; box-sizing: border-box; padding: 4px 6px; background: #3d3d3d; color: #d8d8d8; border: 1px solid transparent; border-radius: 3px; }
+		.fx-row button { padding: 4px 14px; background: #4641d9; color: #fff; border: 0; border-radius: 3px; cursor: pointer; }
+		.fx-row button:disabled { opacity: .5; cursor: default; }
+		#fx-msg { margin: 4px 0 0; }
+	</style>
+	<script src="login.js"></script>
+</body>
+</html>
