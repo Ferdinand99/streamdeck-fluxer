@@ -2,9 +2,9 @@
   "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
   "UUID": "net.opland.fluxer",
   "Name": "Fluxer",
-  "Version": "0.1.0.0",
+  "Version": "0.2.0.0",
   "Author": "Ferdinand99",
-  "Description": "Control Fluxer from your Stream Deck: mute, deafen, push-to-talk, set your status, send quick messages, see who is in a voice channel and track unread mentions. Unofficial plugin.",
+  "Description": "Control Fluxer from your Stream Deck: mute, deafen, push-to-talk, camera, disconnect, see when you are live, set your status, send quick messages, see who is in a voice channel and track unread mentions. Unofficial plugin.",
   "Category": "Fluxer",
   "CategoryIcon": "imgs/category-icon",
   "Icon": "imgs/plugin-icon",
@@ -62,6 +62,57 @@
       "Name": "Push to Talk",
       "Icon": "imgs/action-ptt",
       "Tooltip": "Hold to press your Fluxer push-to-talk shortcut.",
+      "PropertyInspectorPath": "ui/shortcut.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "net.opland.fluxer.camera",
+      "Name": "Camera",
+      "Icon": "imgs/action-camera",
+      "Tooltip": "Toggle your camera in Fluxer (presses your Fluxer shortcut).",
+      "PropertyInspectorPath": "ui/shortcut.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "net.opland.fluxer.live",
+      "Name": "Live",
+      "Icon": "imgs/action-live",
+      "Tooltip": "Shows whether you are streaming (screen share) in Fluxer.",
+      "PropertyInspectorPath": "ui/account.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "net.opland.fluxer.disconnect",
+      "Name": "Disconnect",
+      "Icon": "imgs/action-disconnect",
+      "Tooltip": "Leave the voice channel in Fluxer (presses your Fluxer shortcut).",
       "PropertyInspectorPath": "ui/shortcut.html",
       "Controllers": [
         "Keypad"

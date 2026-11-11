@@ -67,6 +67,31 @@ export function pttIcon(active: boolean): string {
 	);
 }
 
+export function cameraIcon(on: boolean, known = true): string {
+	const c = !known ? COLORS.dim : on ? COLORS.green : COLORS.fg;
+	return svg(
+		`<rect x="20" y="42" width="72" height="56" rx="12" fill="${c}"/>
+		<path d="M98 62l26-16v48l-26-16z" fill="${c}"/>${on || !known ? "" : slash(COLORS.red)}
+		${text(known ? (on ? "Camera on" : "Camera off") : "Camera", 138, 16, c, 500)}`,
+	);
+}
+
+export function liveIcon(live: boolean, known = true): string {
+	const c = !known ? COLORS.dim : live ? COLORS.red : COLORS.fg;
+	const badge = live
+		? `<rect x="22" y="40" width="100" height="48" rx="10" fill="${COLORS.red}"/>${text("LIVE", 77, 30, "#fff", 800)}`
+		: `<rect x="22" y="40" width="100" height="48" rx="10" fill="none" stroke="${c}" stroke-width="6"/>${text("LIVE", 77, 30, c, 800)}`;
+	return svg(`${badge}${text(known ? (live ? "Streaming" : "Not live") : "Stream", 132, 16, c, 500)}`);
+}
+
+export function disconnectIcon(inCall: boolean): string {
+	const c = inCall ? COLORS.red : COLORS.dim;
+	return svg(
+		`<g transform="rotate(135 72 62)"><path d="M48 34c-6 0-10 4-10 10 0 34 28 62 62 62 6 0 10-4 10-10v-12l-22-8-10 10c-10-6-18-14-24-24l10-10-8-22z" fill="${c}"/></g>
+		${text(inCall ? "Disconnect" : "Not in voice", 132, 16, c, 500)}`,
+	);
+}
+
 export function statusIcon(status: string, active: boolean, problem?: string | null): string {
 	const map: Record<string, [string, string]> = {
 		online: [COLORS.green, "Online"],
