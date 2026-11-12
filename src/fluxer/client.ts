@@ -20,6 +20,10 @@ export interface VoiceState {
 	user_id: string | null;
 	self_mute: boolean;
 	self_deaf: boolean;
+	/** Camera on. */
+	self_video?: boolean;
+	/** Screen share ("Go Live") running. */
+	self_stream?: boolean;
 	member?: { nick?: string | null; user?: { username?: string; global_name?: string | null } };
 }
 

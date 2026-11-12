@@ -5,7 +5,7 @@ var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __knownSymbol = (name, symbol2) => (symbol2 = Symbol[name]) ? symbol2 : /* @__PURE__ */ Symbol.for("Symbol." + name);
+var __knownSymbol = (name, symbol2) => (symbol2 = Symbol[name]) ? symbol2 : Symbol.for("Symbol." + name);
 var __typeError = (msg) => {
   throw TypeError(msg);
 };
@@ -18,11 +18,7 @@ var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require
   throw Error('Dynamic require of "' + x + '" is not supported');
 });
 var __commonJS = (cb, mod) => function __require2() {
-  try {
-    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
-  } catch (e) {
-    throw mod = 0, e;
-  }
+  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
 var __export = (target, all) => {
   for (var name in all)
@@ -96,10 +92,10 @@ var require_constants = __commonJS({
       EMPTY_BUFFER: Buffer.alloc(0),
       GUID: "258EAFA5-E914-47DA-95CA-C5AB0DC85B11",
       hasBlob,
-      kForOnEventAttribute: /* @__PURE__ */ Symbol("kIsForOnEventAttribute"),
-      kListener: /* @__PURE__ */ Symbol("kListener"),
-      kStatusCode: /* @__PURE__ */ Symbol("status-code"),
-      kWebSocket: /* @__PURE__ */ Symbol("websocket"),
+      kForOnEventAttribute: Symbol("kIsForOnEventAttribute"),
+      kListener: Symbol("kListener"),
+      kStatusCode: Symbol("status-code"),
+      kWebSocket: Symbol("websocket"),
       NOOP: () => {
       }
     };
@@ -185,8 +181,8 @@ var require_buffer_util = __commonJS({
 var require_limiter = __commonJS({
   "node_modules/ws/lib/limiter.js"(exports, module) {
     "use strict";
-    var kDone = /* @__PURE__ */ Symbol("kDone");
-    var kRun = /* @__PURE__ */ Symbol("kRun");
+    var kDone = Symbol("kDone");
+    var kRun = Symbol("kRun");
     var Limiter = class {
       /**
        * Creates a new `Limiter`.
@@ -241,11 +237,11 @@ var require_permessage_deflate = __commonJS({
     var { kStatusCode } = require_constants();
     var FastBuffer = Buffer[Symbol.species];
     var TRAILER = Buffer.from([0, 0, 255, 255]);
-    var kPerMessageDeflate = /* @__PURE__ */ Symbol("permessage-deflate");
-    var kTotalLength = /* @__PURE__ */ Symbol("total-length");
-    var kCallback = /* @__PURE__ */ Symbol("callback");
-    var kBuffers = /* @__PURE__ */ Symbol("buffers");
-    var kError = /* @__PURE__ */ Symbol("error");
+    var kPerMessageDeflate = Symbol("permessage-deflate");
+    var kTotalLength = Symbol("total-length");
+    var kCallback = Symbol("callback");
+    var kBuffers = Symbol("buffers");
+    var kError = Symbol("error");
     var zlibLimiter;
     var PerMessageDeflate2 = class {
       /**
@@ -1451,7 +1447,7 @@ var require_sender = __commonJS({
     var { EMPTY_BUFFER, kWebSocket, NOOP } = require_constants();
     var { isBlob, isValidStatusCode } = require_validation();
     var { mask: applyMask, toBuffer } = require_buffer_util();
-    var kByteLength = /* @__PURE__ */ Symbol("kByteLength");
+    var kByteLength = Symbol("kByteLength");
     var maskBuffer = Buffer.alloc(4);
     var RANDOM_POOL_SIZE = 8 * 1024;
     var randomPool;
@@ -1936,14 +1932,14 @@ var require_event_target = __commonJS({
   "node_modules/ws/lib/event-target.js"(exports, module) {
     "use strict";
     var { kForOnEventAttribute, kListener } = require_constants();
-    var kCode = /* @__PURE__ */ Symbol("kCode");
-    var kData = /* @__PURE__ */ Symbol("kData");
-    var kError = /* @__PURE__ */ Symbol("kError");
-    var kMessage = /* @__PURE__ */ Symbol("kMessage");
-    var kReason = /* @__PURE__ */ Symbol("kReason");
-    var kTarget = /* @__PURE__ */ Symbol("kTarget");
-    var kType = /* @__PURE__ */ Symbol("kType");
-    var kWasClean = /* @__PURE__ */ Symbol("kWasClean");
+    var kCode = Symbol("kCode");
+    var kData = Symbol("kData");
+    var kError = Symbol("kError");
+    var kMessage = Symbol("kMessage");
+    var kReason = Symbol("kReason");
+    var kTarget = Symbol("kTarget");
+    var kType = Symbol("kType");
+    var kWasClean = Symbol("kWasClean");
     var Event2 = class {
       /**
        * Create a new `Event`.
@@ -2345,7 +2341,7 @@ var require_websocket = __commonJS({
     } = require_event_target();
     var { format, parse: parse2 } = require_extension();
     var { toBuffer } = require_buffer_util();
-    var kAborted = /* @__PURE__ */ Symbol("kAborted");
+    var kAborted = Symbol("kAborted");
     var protocolVersions = [8, 13];
     var readyStates = ["CONNECTING", "OPEN", "CLOSING", "CLOSED"];
     var subprotocolRegex = /^[!#$%&'*+\-.0-9A-Z^_`|a-z~]+$/;
@@ -4379,7 +4375,7 @@ var Enumerable = class _Enumerable {
 };
 
 // node_modules/@elgato/utils/dist/explicit-resource-management/index.js
-Symbol.dispose ??= /* @__PURE__ */ Symbol("Symbol.dispose");
+Symbol.dispose ??= Symbol("Symbol.dispose");
 
 // node_modules/@elgato/utils/dist/lazy.js
 var Lazy = class {
@@ -4885,12 +4881,12 @@ var NEVER = Object.freeze({
 // @__NO_SIDE_EFFECTS__
 function $constructor(name, initializer2, params) {
   function init(inst, def) {
-    var _a8;
+    var _a11;
     Object.defineProperty(inst, "_zod", {
       value: inst._zod ?? {},
       enumerable: false
     });
-    (_a8 = inst._zod).traits ?? (_a8.traits = /* @__PURE__ */ new Set());
+    (_a11 = inst._zod).traits ?? (_a11.traits = /* @__PURE__ */ new Set());
     inst._zod.traits.add(name);
     initializer2(inst, def);
     for (const k in _.prototype) {
@@ -4905,10 +4901,10 @@ function $constructor(name, initializer2, params) {
   }
   Object.defineProperty(Definition, "name", { value: name });
   function _(def) {
-    var _a8;
+    var _a11;
     const inst = params?.Parent ? new Definition() : this;
     init(inst, def);
-    (_a8 = inst._zod).deferred ?? (_a8.deferred = []);
+    (_a11 = inst._zod).deferred ?? (_a11.deferred = []);
     for (const fn of inst._zod.deferred) {
       fn();
     }
@@ -4925,7 +4921,7 @@ function $constructor(name, initializer2, params) {
   Object.defineProperty(_, "name", { value: name });
   return _;
 }
-var $brand = /* @__PURE__ */ Symbol("zod_brand");
+var $brand = Symbol("zod_brand");
 var $ZodAsyncError = class extends Error {
   constructor() {
     super(`Encountered Promise during synchronous parse. Use .parseAsync() instead.`);
@@ -5399,8 +5395,8 @@ function aborted(x, startIndex = 0) {
 }
 function prefixIssues(path5, issues) {
   return issues.map((iss) => {
-    var _a8;
-    (_a8 = iss).path ?? (_a8.path = []);
+    var _a11;
+    (_a11 = iss).path ?? (_a11.path = []);
     iss.path.unshift(path5);
     return iss;
   });
@@ -5539,7 +5535,7 @@ function treeifyError(error40, _mapper) {
   };
   const result = { errors: [] };
   const processError = (error41, path5 = []) => {
-    var _a8, _b;
+    var _a11, _b;
     for (const issue2 of error41.issues) {
       if (issue2.code === "invalid_union" && issue2.errors.length) {
         issue2.errors.map((issues) => processError({ issues }, issue2.path));
@@ -5560,7 +5556,7 @@ function treeifyError(error40, _mapper) {
           const terminal = i === fullpath.length - 1;
           if (typeof el === "string") {
             curr.properties ?? (curr.properties = {});
-            (_a8 = curr.properties)[el] ?? (_a8[el] = { errors: [] });
+            (_a11 = curr.properties)[el] ?? (_a11[el] = { errors: [] });
             curr = curr.properties[el];
           } else {
             curr.items ?? (curr.items = []);
@@ -5773,10 +5769,10 @@ var uppercase = /^[^a-z]*$/;
 
 // node_modules/zod/v4/core/checks.js
 var $ZodCheck = /* @__PURE__ */ $constructor("$ZodCheck", (inst, def) => {
-  var _a8;
+  var _a11;
   inst._zod ?? (inst._zod = {});
   inst._zod.def = def;
-  (_a8 = inst._zod).onattach ?? (_a8.onattach = []);
+  (_a11 = inst._zod).onattach ?? (_a11.onattach = []);
 });
 var numericOriginMap = {
   number: "number",
@@ -5842,8 +5838,8 @@ var $ZodCheckGreaterThan = /* @__PURE__ */ $constructor("$ZodCheckGreaterThan", 
 var $ZodCheckMultipleOf = /* @__PURE__ */ $constructor("$ZodCheckMultipleOf", (inst, def) => {
   $ZodCheck.init(inst, def);
   inst._zod.onattach.push((inst2) => {
-    var _a8;
-    (_a8 = inst2._zod.bag).multipleOf ?? (_a8.multipleOf = def.value);
+    var _a11;
+    (_a11 = inst2._zod.bag).multipleOf ?? (_a11.multipleOf = def.value);
   });
   inst._zod.check = (payload) => {
     if (typeof payload.value !== typeof def.value)
@@ -5969,9 +5965,9 @@ var $ZodCheckBigIntFormat = /* @__PURE__ */ $constructor("$ZodCheckBigIntFormat"
   };
 });
 var $ZodCheckMaxSize = /* @__PURE__ */ $constructor("$ZodCheckMaxSize", (inst, def) => {
-  var _a8;
+  var _a11;
   $ZodCheck.init(inst, def);
-  (_a8 = inst._zod.def).when ?? (_a8.when = (payload) => {
+  (_a11 = inst._zod.def).when ?? (_a11.when = (payload) => {
     const val = payload.value;
     return !nullish(val) && val.size !== void 0;
   });
@@ -5996,9 +5992,9 @@ var $ZodCheckMaxSize = /* @__PURE__ */ $constructor("$ZodCheckMaxSize", (inst, d
   };
 });
 var $ZodCheckMinSize = /* @__PURE__ */ $constructor("$ZodCheckMinSize", (inst, def) => {
-  var _a8;
+  var _a11;
   $ZodCheck.init(inst, def);
-  (_a8 = inst._zod.def).when ?? (_a8.when = (payload) => {
+  (_a11 = inst._zod.def).when ?? (_a11.when = (payload) => {
     const val = payload.value;
     return !nullish(val) && val.size !== void 0;
   });
@@ -6023,9 +6019,9 @@ var $ZodCheckMinSize = /* @__PURE__ */ $constructor("$ZodCheckMinSize", (inst, d
   };
 });
 var $ZodCheckSizeEquals = /* @__PURE__ */ $constructor("$ZodCheckSizeEquals", (inst, def) => {
-  var _a8;
+  var _a11;
   $ZodCheck.init(inst, def);
-  (_a8 = inst._zod.def).when ?? (_a8.when = (payload) => {
+  (_a11 = inst._zod.def).when ?? (_a11.when = (payload) => {
     const val = payload.value;
     return !nullish(val) && val.size !== void 0;
   });
@@ -6053,9 +6049,9 @@ var $ZodCheckSizeEquals = /* @__PURE__ */ $constructor("$ZodCheckSizeEquals", (i
   };
 });
 var $ZodCheckMaxLength = /* @__PURE__ */ $constructor("$ZodCheckMaxLength", (inst, def) => {
-  var _a8;
+  var _a11;
   $ZodCheck.init(inst, def);
-  (_a8 = inst._zod.def).when ?? (_a8.when = (payload) => {
+  (_a11 = inst._zod.def).when ?? (_a11.when = (payload) => {
     const val = payload.value;
     return !nullish(val) && val.length !== void 0;
   });
@@ -6082,9 +6078,9 @@ var $ZodCheckMaxLength = /* @__PURE__ */ $constructor("$ZodCheckMaxLength", (ins
   };
 });
 var $ZodCheckMinLength = /* @__PURE__ */ $constructor("$ZodCheckMinLength", (inst, def) => {
-  var _a8;
+  var _a11;
   $ZodCheck.init(inst, def);
-  (_a8 = inst._zod.def).when ?? (_a8.when = (payload) => {
+  (_a11 = inst._zod.def).when ?? (_a11.when = (payload) => {
     const val = payload.value;
     return !nullish(val) && val.length !== void 0;
   });
@@ -6111,9 +6107,9 @@ var $ZodCheckMinLength = /* @__PURE__ */ $constructor("$ZodCheckMinLength", (ins
   };
 });
 var $ZodCheckLengthEquals = /* @__PURE__ */ $constructor("$ZodCheckLengthEquals", (inst, def) => {
-  var _a8;
+  var _a11;
   $ZodCheck.init(inst, def);
-  (_a8 = inst._zod.def).when ?? (_a8.when = (payload) => {
+  (_a11 = inst._zod.def).when ?? (_a11.when = (payload) => {
     const val = payload.value;
     return !nullish(val) && val.length !== void 0;
   });
@@ -6142,7 +6138,7 @@ var $ZodCheckLengthEquals = /* @__PURE__ */ $constructor("$ZodCheckLengthEquals"
   };
 });
 var $ZodCheckStringFormat = /* @__PURE__ */ $constructor("$ZodCheckStringFormat", (inst, def) => {
-  var _a8, _b;
+  var _a11, _b;
   $ZodCheck.init(inst, def);
   inst._zod.onattach.push((inst2) => {
     const bag = inst2._zod.bag;
@@ -6153,7 +6149,7 @@ var $ZodCheckStringFormat = /* @__PURE__ */ $constructor("$ZodCheckStringFormat"
     }
   });
   if (def.pattern)
-    (_a8 = inst._zod).check ?? (_a8.check = (payload) => {
+    (_a11 = inst._zod).check ?? (_a11.check = (payload) => {
       def.pattern.lastIndex = 0;
       if (def.pattern.test(payload.value))
         return;
@@ -6354,7 +6350,7 @@ var version = {
 
 // node_modules/zod/v4/core/schemas.js
 var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
-  var _a8;
+  var _a11;
   inst ?? (inst = {});
   inst._zod.def = def;
   inst._zod.bag = inst._zod.bag || {};
@@ -6369,7 +6365,7 @@ var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
     }
   }
   if (checks.length === 0) {
-    (_a8 = inst._zod).deferred ?? (_a8.deferred = []);
+    (_a11 = inst._zod).deferred ?? (_a11.deferred = []);
     inst._zod.deferred?.push(() => {
       inst._zod.run = inst._zod.parse;
     });
@@ -12745,8 +12741,8 @@ function zh_TW_default() {
 }
 
 // node_modules/zod/v4/core/registries.js
-var $output = /* @__PURE__ */ Symbol("ZodOutput");
-var $input = /* @__PURE__ */ Symbol("ZodInput");
+var $output = Symbol("ZodOutput");
+var $input = Symbol("ZodInput");
 var $ZodRegistry = class {
   constructor() {
     this._map = /* @__PURE__ */ new Map();
@@ -13735,7 +13731,7 @@ var JSONSchemaGenerator = class {
     this.seen = /* @__PURE__ */ new Map();
   }
   process(schema, _params = { path: [], schemaPath: [] }) {
-    var _a8;
+    var _a11;
     const def = schema._zod.def;
     const formatMap = {
       guid: "uuid",
@@ -14197,7 +14193,7 @@ var JSONSchemaGenerator = class {
       delete result.schema.default;
     }
     if (this.io === "input" && result.schema._prefault)
-      (_a8 = result.schema).default ?? (_a8.default = result.schema._prefault);
+      (_a11 = result.schema).default ?? (_a11.default = result.schema._prefault);
     delete result.schema._prefault;
     const _result = this.seen.get(schema);
     return _result.schema;
@@ -18002,6 +17998,26 @@ function pttIcon(active) {
 		<rect x="62" y="40" width="20" height="36" rx="10" fill="${c}"/>${text("Push to talk", 128, 16, c, 500)}`
   );
 }
+function cameraIcon(on, known = true) {
+  const c = !known ? COLORS.dim : on ? COLORS.green : COLORS.fg;
+  return svg(
+    `<rect x="20" y="42" width="72" height="56" rx="12" fill="${c}"/>
+		<path d="M98 62l26-16v48l-26-16z" fill="${c}"/>${on || !known ? "" : slash(COLORS.red)}
+		${text(known ? on ? "Camera on" : "Camera off" : "Camera", 138, 16, c, 500)}`
+  );
+}
+function liveIcon(live, known = true) {
+  const c = !known ? COLORS.dim : live ? COLORS.red : COLORS.fg;
+  const badge = live ? `<rect x="22" y="40" width="100" height="48" rx="10" fill="${COLORS.red}"/>${text("LIVE", 77, 30, "#fff", 800)}` : `<rect x="22" y="40" width="100" height="48" rx="10" fill="none" stroke="${c}" stroke-width="6"/>${text("LIVE", 77, 30, c, 800)}`;
+  return svg(`${badge}${text(known ? live ? "Streaming" : "Not live" : "Stream", 132, 16, c, 500)}`);
+}
+function disconnectIcon(inCall) {
+  const c = inCall ? COLORS.red : COLORS.dim;
+  return svg(
+    `<g transform="rotate(135 72 62)"><path d="M48 34c-6 0-10 4-10 10 0 34 28 62 62 62 6 0 10-4 10-10v-12l-22-8-10 10c-10-6-18-14-24-24l10-10-8-22z" fill="${c}"/></g>
+		${text(inCall ? "Disconnect" : "Not in voice", 132, 16, c, 500)}`
+  );
+}
 function statusIcon(status, active, problem) {
   const map2 = {
     online: [COLORS.green, "Online"],
@@ -18104,27 +18120,6 @@ var StatusAction = class extends (_a3 = FluxerAction) {
 _init3 = __decoratorStart(_a3);
 StatusAction = __decorateElement(_init3, 0, "StatusAction", _StatusAction_decorators, StatusAction);
 __runInitializers(_init3, 1, StatusAction);
-
-// src/actions/voice-channel.ts
-var _VoiceChannelAction_decorators, _init4, _a4;
-_VoiceChannelAction_decorators = [action({ UUID: "net.opland.fluxer.voice" })];
-var VoiceChannelAction = class extends (_a4 = FluxerAction) {
-  datasources = { voiceChannels: [ChannelType.GuildVoice, ChannelType.GroupDM, ChannelType.DM] };
-  async draw(a, s) {
-    const id = s.channelId;
-    const name = id && client.channelName(id)?.split("\u203A").pop()?.trim() || "Voice";
-    await a.setImage(voiceIcon(name, id ? client.membersInChannel(id) : [], client.connected));
-  }
-  async onKeyDown(ev) {
-    const id = ev.payload.settings.channelId;
-    if (!id) return ev.action.showAlert();
-    const guildId = [...client.guilds.values()].find((g) => g.channels.has(id))?.id ?? "@me";
-    await plugin_default.system.openUrl(`${client.webapp}/channels/${guildId}/${id}`);
-  }
-};
-_init4 = __decoratorStart(_a4);
-VoiceChannelAction = __decorateElement(_init4, 0, "VoiceChannelAction", _VoiceChannelAction_decorators, VoiceChannelAction);
-__runInitializers(_init4, 1, VoiceChannelAction);
 
 // src/keys.ts
 import { spawn } from "node:child_process";
@@ -18251,6 +18246,67 @@ function stopKeys() {
   proc = null;
 }
 
+// src/actions/voice-call.ts
+var _CameraAction_decorators, _init4, _a4;
+_CameraAction_decorators = [action({ UUID: "net.opland.fluxer.camera" })];
+var CameraAction = class extends (_a4 = FluxerAction) {
+  async draw(a) {
+    const v = client.ownVoice;
+    await a.setImage(cameraIcon(Boolean(v?.self_video), v !== null));
+  }
+  async onKeyDown(ev) {
+    if (!tap(ev.payload.settings.shortcut || "ctrl+shift+k")) await ev.action.showAlert();
+  }
+};
+_init4 = __decoratorStart(_a4);
+CameraAction = __decorateElement(_init4, 0, "CameraAction", _CameraAction_decorators, CameraAction);
+__runInitializers(_init4, 1, CameraAction);
+var _LiveAction_decorators, _init5, _a5;
+_LiveAction_decorators = [action({ UUID: "net.opland.fluxer.live" })];
+var LiveAction = class extends (_a5 = FluxerAction) {
+  async draw(a) {
+    const v = client.ownVoice;
+    await a.setImage(liveIcon(Boolean(v?.self_stream), v !== null));
+  }
+};
+_init5 = __decoratorStart(_a5);
+LiveAction = __decorateElement(_init5, 0, "LiveAction", _LiveAction_decorators, LiveAction);
+__runInitializers(_init5, 1, LiveAction);
+var _DisconnectAction_decorators, _init6, _a6;
+_DisconnectAction_decorators = [action({ UUID: "net.opland.fluxer.disconnect" })];
+var DisconnectAction = class extends (_a6 = FluxerAction) {
+  async draw(a) {
+    await a.setImage(disconnectIcon(client.ownVoice !== null));
+  }
+  async onKeyDown(ev) {
+    if (!tap(ev.payload.settings.shortcut || "ctrl+shift+e")) await ev.action.showAlert();
+  }
+};
+_init6 = __decoratorStart(_a6);
+DisconnectAction = __decorateElement(_init6, 0, "DisconnectAction", _DisconnectAction_decorators, DisconnectAction);
+__runInitializers(_init6, 1, DisconnectAction);
+
+// src/actions/voice-channel.ts
+var _VoiceChannelAction_decorators, _init7, _a7;
+_VoiceChannelAction_decorators = [action({ UUID: "net.opland.fluxer.voice" })];
+var VoiceChannelAction = class extends (_a7 = FluxerAction) {
+  datasources = { voiceChannels: [ChannelType.GuildVoice, ChannelType.GroupDM, ChannelType.DM] };
+  async draw(a, s) {
+    const id = s.channelId;
+    const name = id && client.channelName(id)?.split("\u203A").pop()?.trim() || "Voice";
+    await a.setImage(voiceIcon(name, id ? client.membersInChannel(id) : [], client.connected));
+  }
+  async onKeyDown(ev) {
+    const id = ev.payload.settings.channelId;
+    if (!id) return ev.action.showAlert();
+    const guildId = [...client.guilds.values()].find((g) => g.channels.has(id))?.id ?? "@me";
+    await plugin_default.system.openUrl(`${client.webapp}/channels/${guildId}/${id}`);
+  }
+};
+_init7 = __decoratorStart(_a7);
+VoiceChannelAction = __decorateElement(_init7, 0, "VoiceChannelAction", _VoiceChannelAction_decorators, VoiceChannelAction);
+__runInitializers(_init7, 1, VoiceChannelAction);
+
 // src/actions/voice-toggle.ts
 var VoiceToggle = class extends FluxerAction {
   async draw(a) {
@@ -18261,29 +18317,29 @@ var VoiceToggle = class extends FluxerAction {
     if (!tap(ev.payload.settings.shortcut || this.defaultShortcut)) await ev.action.showAlert();
   }
 };
-var _MuteAction_decorators, _init5, _a5;
+var _MuteAction_decorators, _init8, _a8;
 _MuteAction_decorators = [action({ UUID: "net.opland.fluxer.mute" })];
-var MuteAction = class extends (_a5 = VoiceToggle) {
+var MuteAction = class extends (_a8 = VoiceToggle) {
   defaultShortcut = "ctrl+shift+m";
   flag = "self_mute";
   icon = micIcon;
 };
-_init5 = __decoratorStart(_a5);
-MuteAction = __decorateElement(_init5, 0, "MuteAction", _MuteAction_decorators, MuteAction);
-__runInitializers(_init5, 1, MuteAction);
-var _DeafenAction_decorators, _init6, _a6;
+_init8 = __decoratorStart(_a8);
+MuteAction = __decorateElement(_init8, 0, "MuteAction", _MuteAction_decorators, MuteAction);
+__runInitializers(_init8, 1, MuteAction);
+var _DeafenAction_decorators, _init9, _a9;
 _DeafenAction_decorators = [action({ UUID: "net.opland.fluxer.deafen" })];
-var DeafenAction = class extends (_a6 = VoiceToggle) {
+var DeafenAction = class extends (_a9 = VoiceToggle) {
   defaultShortcut = "ctrl+shift+d";
   flag = "self_deaf";
   icon = headphonesIcon;
 };
-_init6 = __decoratorStart(_a6);
-DeafenAction = __decorateElement(_init6, 0, "DeafenAction", _DeafenAction_decorators, DeafenAction);
-__runInitializers(_init6, 1, DeafenAction);
-var _PushToTalkAction_decorators, _init7, _a7;
+_init9 = __decoratorStart(_a9);
+DeafenAction = __decorateElement(_init9, 0, "DeafenAction", _DeafenAction_decorators, DeafenAction);
+__runInitializers(_init9, 1, DeafenAction);
+var _PushToTalkAction_decorators, _init10, _a10;
 _PushToTalkAction_decorators = [action({ UUID: "net.opland.fluxer.ptt" })];
-var PushToTalkAction = class extends (_a7 = FluxerAction) {
+var PushToTalkAction = class extends (_a10 = FluxerAction) {
   async draw(a) {
     await a.setImage(pttIcon(false));
   }
@@ -18296,14 +18352,17 @@ var PushToTalkAction = class extends (_a7 = FluxerAction) {
     await ev.action.setImage(pttIcon(false));
   }
 };
-_init7 = __decoratorStart(_a7);
-PushToTalkAction = __decorateElement(_init7, 0, "PushToTalkAction", _PushToTalkAction_decorators, PushToTalkAction);
-__runInitializers(_init7, 1, PushToTalkAction);
+_init10 = __decoratorStart(_a10);
+PushToTalkAction = __decorateElement(_init10, 0, "PushToTalkAction", _PushToTalkAction_decorators, PushToTalkAction);
+__runInitializers(_init10, 1, PushToTalkAction);
 
 // src/plugin.ts
 plugin_default.actions.registerAction(new MuteAction());
 plugin_default.actions.registerAction(new DeafenAction());
 plugin_default.actions.registerAction(new PushToTalkAction());
+plugin_default.actions.registerAction(new CameraAction());
+plugin_default.actions.registerAction(new LiveAction());
+plugin_default.actions.registerAction(new DisconnectAction());
 plugin_default.actions.registerAction(new StatusAction());
 plugin_default.actions.registerAction(new MessageAction());
 plugin_default.actions.registerAction(new VoiceChannelAction());
