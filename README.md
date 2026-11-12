@@ -38,6 +38,9 @@ client through the API. Mute/Deafen/PTT therefore press a keyboard shortcut. Set
 Fluxer (defaults used when the field is empty: mute `ctrl+shift+m`, deafen `ctrl+shift+d`, PTT `ctrl+shift+t`,
 camera `ctrl+shift+k`, disconnect `ctrl+shift+e`).
 
+Fluxer only sets mute and deafen by default. Push to talk, camera and disconnect have no shortcut until you set
+one in Fluxer (User Settings → Keybinds, with Global on); each key's settings say which one.
+
 Fluxer has no shortcut to start or stop a stream, and starting one needs you to pick a screen or window, so the
 plugin cannot start or stop streaming. The Live key shows the state instead. A start/stop key can follow if
 Fluxer adds a shortcut for it.

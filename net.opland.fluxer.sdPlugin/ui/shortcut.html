@@ -6,8 +6,8 @@
 	<script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
 </head>
 <body>
-	<sdpi-item label="Shortcut"><sdpi-textfield setting="shortcut" placeholder="e.g. ctrl+shift+m"></sdpi-textfield></sdpi-item>
-	<sdpi-item><p>Must match the shortcut set in Fluxer (global keybind). Modifiers: ctrl, shift, alt, win. Keys: a-z, 0-9, f1-f24, space, etc. Leave empty for the default.</p></sdpi-item>
+	<sdpi-item label="Shortcut"><sdpi-textfield id="fx-shortcut" setting="shortcut" placeholder="e.g. ctrl+shift+m"></sdpi-textfield></sdpi-item>
+	<sdpi-item><p id="fx-hint">Must match the shortcut set in Fluxer (global keybind). Modifiers: ctrl, shift, alt, win. Keys: a-z, 0-9, f1-f24, space, etc. Leave empty for the default.</p></sdpi-item>
 	<sdpi-item label="&nbsp;"></sdpi-item>
 	<sdpi-item label="Instance"><sdpi-textfield global setting="instance" placeholder="https://fluxer.app" ></sdpi-textfield></sdpi-item>
 	<sdpi-item label="Token"><sdpi-password global setting="token" placeholder="flx_..."></sdpi-password></sdpi-item>
@@ -30,6 +30,7 @@
 		.fx-row button:disabled { opacity: .5; cursor: default; }
 		#fx-msg { margin: 4px 0 0; }
 	</style>
+	<script src="shortcut.js"></script>
 	<script src="login.js"></script>
 </body>
 </html>
